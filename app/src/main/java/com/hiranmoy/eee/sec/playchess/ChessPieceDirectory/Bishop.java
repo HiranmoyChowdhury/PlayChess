@@ -78,12 +78,12 @@ public class Bishop implements ChessPiece {
 
     @Override
     public boolean[][] canMove(ChessPiece[][] grid, int x, int y) {
-       // Log.d("knight", "canMove: "+x+"  "+y);
+
         boolean[][] check = new boolean[9][9];
         int[] inc = new int[]{1, -1};
         for(int i = 0; i<2; i++){
             for(int j = 0; j<2; j++){
-                int tempx = x, tempy = y;
+                int tempx = x+inc[i], tempy = y+inc[j];
                 while(tempx>0 && tempx<9 && tempy>0 && tempy<9){
 
                     check[tempx][tempy] = true;
@@ -92,7 +92,6 @@ public class Bishop implements ChessPiece {
                 }
             }
         }
-        check[x][y] = false;
         return check;
 
 
