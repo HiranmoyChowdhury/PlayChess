@@ -186,6 +186,8 @@ public class ChessBoard extends AppCompatActivity {
 
 
         move^=1;
+        message.setText(playerName[move]+"'s turn");
+
     }
 
     public void clicked(int pos){
