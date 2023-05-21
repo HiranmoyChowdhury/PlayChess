@@ -36,7 +36,8 @@ public class Empty implements ChessPiece {
 
     @Override
     public Drawable getAttackedIcon() {
-        return null;
+        Drawable icon = ChessBoard.context.getResources().getDrawable(R.drawable.dotattack);
+        return icon;
     }
 
     @Override

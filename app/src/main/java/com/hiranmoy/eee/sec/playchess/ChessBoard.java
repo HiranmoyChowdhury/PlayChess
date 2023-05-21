@@ -2,20 +2,15 @@ package com.hiranmoy.eee.sec.playchess;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hiranmoy.eee.sec.playchess.ChessPieceDirectory.Action;
-import com.hiranmoy.eee.sec.playchess.ChessPieceDirectory.Change;
 
 import java.util.ArrayList;
 
@@ -136,15 +131,8 @@ public class ChessBoard extends AppCompatActivity {
            // Log.d("Move bug", "move: "+pos);
             for(int i = 0; i<allMoves.size(); i++){
                 int x = allMoves.get(i).x, y = allMoves.get(i).y, flag = allMoves.get(i).flag;
-                int buttonNo = ((row-1)*8) + col;
-                if(flag==0){
-                    //green
-                  //  ChessBoard.button[buttonNo].setBackgroundColor(R.color.green);
-                }
-                else{
-                    //red
-                 //   ChessBoard.button[buttonNo].setBackgroundColor(R.color.red);
-                }
+                int buttonNo = ((x-1)*8) + y;
+                button[buttonNo].setImageDrawable(grid[x][y].getAttackedIcon());
             }
 
             return;
@@ -196,12 +184,6 @@ public class ChessBoard extends AppCompatActivity {
         if(col==0) col = 8;
         row++;
         move(row, col);
-    }
-    public static void changeGrey(int pos){
-      //  button[pos].setBackgroundColor(R.color.grey);
-    }
-    public static void changeBrown(int pos){
-      //  button[pos].setBackgroundColor(R.color.brown);
     }
     public void Button1(View view){
         clicked(1);

@@ -80,7 +80,12 @@ public class Pawn implements ChessPiece {
 
     @Override
     public Drawable getAttackedIcon() {
-        return null;
+        Drawable icon;
+        if(playerNo==1){
+            icon = ChessBoard.context.getResources().getDrawable(R.drawable.pawnwhiteattack);
+        }
+        else icon = ChessBoard.context.getResources().getDrawable(R.drawable.pawnblackattack);
+        return icon;
     }
 
     @Override

@@ -20,12 +20,6 @@ public class SetChessBoard {
             for(int j = 1; j<=8; j++){
                 int buttonNo = ((i-1)*8) + j;
                 ChessBoard.button[buttonNo].setImageDrawable(ChessBoard.grid[i][j].getNormalIcon());
-                if((i+j)%2==0){
-                    ChessBoard.changeGrey(buttonNo);
-                }
-                else{
-                    ChessBoard.changeBrown(buttonNo);
-                }
             }
         }
     }

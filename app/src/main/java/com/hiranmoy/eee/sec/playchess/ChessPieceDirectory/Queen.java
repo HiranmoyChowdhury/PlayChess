@@ -52,7 +52,12 @@ public class Queen implements ChessPiece {
 
     @Override
     public Drawable getAttackedIcon() {
-        return null;
+        Drawable icon;
+        if(playerNo==1){
+            icon = ChessBoard.context.getResources().getDrawable(R.drawable.queenwhiteattack);
+        }
+        else icon = ChessBoard.context.getResources().getDrawable(R.drawable.queenblackattack);
+        return icon;
     }
 
     @Override

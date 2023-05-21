@@ -71,7 +71,12 @@ public class Knight implements ChessPiece {
 
     @Override
     public Drawable getAttackedIcon() {
-        return null;
+        Drawable icon;
+        if(playerNo==1){
+            icon = ChessBoard.context.getResources().getDrawable(R.drawable.knightwhiteattack);
+        }
+        else icon = ChessBoard.context.getResources().getDrawable(R.drawable.knightblackattack);
+        return icon;
     }
 
     @Override
