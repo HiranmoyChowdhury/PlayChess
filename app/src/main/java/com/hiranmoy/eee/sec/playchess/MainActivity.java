@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             ChessBoard.grid[1][4] = new Queen(playerTwoName, 0);
             ChessBoard.grid[1][5] = new King(playerTwoName, 0);
 
-
+            ChessBoard.pawnx = ChessBoard.pawny = -1;
             message.setText(" ");
 
             Intent i = new Intent(getApplicationContext(),ChessBoard.class);

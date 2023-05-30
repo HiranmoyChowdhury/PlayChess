@@ -1,16 +1,24 @@
 package com.hiranmoy.eee.sec.playchess;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hiranmoy.eee.sec.playchess.ChessPieceDirectory.Action;
+import com.hiranmoy.eee.sec.playchess.ChessPieceDirectory.Bishop;
+import com.hiranmoy.eee.sec.playchess.ChessPieceDirectory.Empty;
+import com.hiranmoy.eee.sec.playchess.ChessPieceDirectory.Knight;
+import com.hiranmoy.eee.sec.playchess.ChessPieceDirectory.Queen;
+import com.hiranmoy.eee.sec.playchess.ChessPieceDirectory.Rook;
 
 import java.util.ArrayList;
 
@@ -18,11 +26,12 @@ public class ChessBoard extends AppCompatActivity {
     public static String[] playerName = new String[2];
     public static int move = 0;
     public static TextView name1, name2, message;
-    public static ImageView[] button = new ImageView[65];
+    public static ImageView[] button = new ImageView[70];
 
     public static ChessPiece[][] grid = new ChessPiece[10][10];
 
     public static Context context;
+    public static int pawnx, pawny;
 
     public static ArrayList<Action> allMoves = new ArrayList<>();
 
@@ -39,6 +48,11 @@ public class ChessBoard extends AppCompatActivity {
         name2.setText("Player 2: "+playerName[0]);
 
         context = this;
+
+        ActionBar actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#029587"));
+        actionBar.setBackgroundDrawable(colorDrawable);
 
 
         button[1] = findViewById(R.id.button1);         button[2] = findViewById(R.id.button2);
@@ -73,6 +87,11 @@ public class ChessBoard extends AppCompatActivity {
         button[59] = findViewById(R.id.button59);         button[60] = findViewById(R.id.button60);
         button[61] = findViewById(R.id.button61);         button[62] = findViewById(R.id.button62);
         button[63] = findViewById(R.id.button63);         button[64] = findViewById(R.id.button64);
+
+        button[65] = findViewById(R.id.button65);
+        button[66] = findViewById(R.id.button66);
+        button[67] = findViewById(R.id.button67);
+        button[68] = findViewById(R.id.button68);
 
         /// lastdigit    pawn
          //    1    -    king
@@ -117,7 +136,6 @@ public class ChessBoard extends AppCompatActivity {
                 break;
             }
         }
-     //   Log.d("Move bug", "move: "+pos);
         if(pos>=0){
             performMove(allMoves.get(pos));
         }
@@ -138,8 +156,38 @@ public class ChessBoard extends AppCompatActivity {
             return;
         }
 
+        for(int i = 1; i<=8; i++){
+            if(grid[1][i].getPawnType()==5){
+                pawnx = 1; pawny = i;
+                button[65].setImageResource(R.drawable.queenwhiteattack);
+                button[66].setImageResource(R.drawable.knightwhiteattack);
+                button[67].setImageResource(R.drawable.bishopwhiteattack);
+                button[68].setImageResource(R.drawable.rookwhiteattack);
+                message.setText(playerName[move]+", please choose something");
+                return;
+            }
+            if(grid[8][i].getPawnType()==5){
+                pawnx =8; pawny = i;
+                button[65].setImageResource(R.drawable.queenwhiteattack);
+                button[66].setImageResource(R.drawable.knightwhiteattack);
+                button[67].setImageResource(R.drawable.bishopwhiteattack);
+                button[68].setImageResource(R.drawable.rookwhiteattack);
+                message.setText(playerName[move]+", please choose something");
+                return;
+            }
+
+        }
+
+        aftermove();
 
 
+
+
+
+
+
+    }
+    public void aftermove(){
         if(CheckMate.check(grid, move)==true){
             String message;
             message = playerName[move]+" is the Winner";
@@ -175,10 +223,10 @@ public class ChessBoard extends AppCompatActivity {
 
         move^=1;
         message.setText(playerName[move]+"'s turn");
-
     }
 
     public void clicked(int pos){
+        if(pawnx!=-1) return;
         int row = (pos-1)/8;
         int col = pos%8;
         if(col==0) col = 8;
@@ -376,6 +424,39 @@ public class ChessBoard extends AppCompatActivity {
     }
     public void Button64(View view){
         clicked(64);
+    }
+    public void Button65(View view){
+        if(pawnx==-1) return;
+        for(int i = 65; i<=68; i++) button[i].setImageResource(R.drawable.dot);
+        grid[pawnx][pawny] = new Queen(grid[pawnx][pawny].getPlayerName(), grid[pawnx][pawny].getPlayerNo());
+        pawny = pawnx = -1;
+        SetChessBoard.set();
+        aftermove();
+
+    }
+    public void Button66(View view){
+        if(pawnx==-1) return;
+        for(int i = 65; i<=68; i++) button[i].setImageResource(R.drawable.dot);
+        grid[pawnx][pawny] = new Knight(grid[pawnx][pawny].getPlayerName(), grid[pawnx][pawny].getPlayerNo());
+        pawny = pawnx = -1;
+        SetChessBoard.set();
+        aftermove();
+    }
+    public void Button67(View view){
+        if(pawnx==-1) return;
+        for(int i = 65; i<=68; i++) button[i].setImageResource(R.drawable.dot);
+        grid[pawnx][pawny] = new Bishop(grid[pawnx][pawny].getPlayerName(), grid[pawnx][pawny].getPlayerNo());
+        pawny = pawnx = -1;
+        SetChessBoard.set();
+        aftermove();
+    }
+    public void Button68(View view){
+        if(pawnx==-1) return;
+        for(int i = 65; i<=68; i++) button[i].setImageResource(R.drawable.dot);
+        grid[pawnx][pawny] = new Rook(grid[pawnx][pawny].getPlayerName(), grid[pawnx][pawny].getPlayerNo());
+        pawny = pawnx = -1;
+        SetChessBoard.set();
+        aftermove();
     }
 
 
