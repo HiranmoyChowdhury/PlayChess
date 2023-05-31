@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             ChessBoard.playerName[0] = playerTwoName;
 
             for(int i = 0; i<10; i++) for(int j = 0; j<10; j++) ChessBoard.grid[i][j] = new Empty(null, 3);
+            for(int i = 0; i<9; i++) for(int j = 0; j<9; j++) ChessBoard.entryOfGrid[i][j] = false;
 
             for(int i = 1; i<=8; i++){
                 ChessBoard.grid[7][i] = new Pawn(playerOneName, 1); //pawn

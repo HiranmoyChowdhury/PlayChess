@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -189,6 +190,7 @@ public class ChessBoard extends AppCompatActivity {
     }
     public void aftermove(){
         if(CheckMate.check(grid, move)==true){
+            Log.d("knight", "aftermove:   "+"HAHA");
             String message;
             message = playerName[move]+" is the Winner";
             builder = new AlertDialog.Builder(this);
@@ -200,13 +202,13 @@ public class ChessBoard extends AppCompatActivity {
                         }
                     });
             AlertDialog alert = builder.create();
-            alert.setTitle("Congratulations");
+            alert.setTitle("Checkmate");
             alert.show();
 
         }
-        if(Draw.check(grid, move)==true){
+        else if(Draw.check(grid, move)==true){
             String message;
-            message = "Draw";
+            message = "Both of you played well";
             builder = new AlertDialog.Builder(this);
             builder.setMessage(message)
                     .setCancelable(false)
@@ -216,7 +218,7 @@ public class ChessBoard extends AppCompatActivity {
                         }
                     });
             AlertDialog alert = builder.create();
-            alert.setTitle("Play Chess");
+            alert.setTitle("Draw");
             alert.show();
         }
 
