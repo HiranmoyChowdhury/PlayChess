@@ -427,7 +427,7 @@ public class ChessBoard extends AppCompatActivity {
     }
     public void Button65(View view){
         if(pawnx==-1) return;
-        for(int i = 65; i<=68; i++) button[i].setImageResource(R.drawable.dot);
+        for(int i = 65; i<=68; i++) button[i].setImageDrawable(null);
         grid[pawnx][pawny] = new Queen(grid[pawnx][pawny].getPlayerName(), grid[pawnx][pawny].getPlayerNo());
         pawny = pawnx = -1;
         SetChessBoard.set();
@@ -436,7 +436,7 @@ public class ChessBoard extends AppCompatActivity {
     }
     public void Button66(View view){
         if(pawnx==-1) return;
-        for(int i = 65; i<=68; i++) button[i].setImageResource(R.drawable.dot);
+        for(int i = 65; i<=68; i++) button[i].setImageDrawable(null);
         grid[pawnx][pawny] = new Knight(grid[pawnx][pawny].getPlayerName(), grid[pawnx][pawny].getPlayerNo());
         pawny = pawnx = -1;
         SetChessBoard.set();
@@ -444,7 +444,7 @@ public class ChessBoard extends AppCompatActivity {
     }
     public void Button67(View view){
         if(pawnx==-1) return;
-        for(int i = 65; i<=68; i++) button[i].setImageResource(R.drawable.dot);
+        for(int i = 65; i<=68; i++) button[i].setImageDrawable(null);
         grid[pawnx][pawny] = new Bishop(grid[pawnx][pawny].getPlayerName(), grid[pawnx][pawny].getPlayerNo());
         pawny = pawnx = -1;
         SetChessBoard.set();
@@ -452,7 +452,7 @@ public class ChessBoard extends AppCompatActivity {
     }
     public void Button68(View view){
         if(pawnx==-1) return;
-        for(int i = 65; i<=68; i++) button[i].setImageResource(R.drawable.dot);
+        for(int i = 65; i<=68; i++) button[i].setImageDrawable(null);
         grid[pawnx][pawny] = new Rook(grid[pawnx][pawny].getPlayerName(), grid[pawnx][pawny].getPlayerNo());
         pawny = pawnx = -1;
         SetChessBoard.set();

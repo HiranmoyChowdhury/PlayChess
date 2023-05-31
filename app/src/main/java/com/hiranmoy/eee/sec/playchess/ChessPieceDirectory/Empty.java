@@ -30,8 +30,7 @@ public class Empty implements ChessPiece {
 
     @Override
     public Drawable getNormalIcon() {
-        Drawable icon = ChessBoard.context.getResources().getDrawable(R.drawable.dot);
-        return icon;
+        return null;
     }
 
     @Override
