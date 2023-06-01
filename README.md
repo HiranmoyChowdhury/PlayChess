@@ -4,6 +4,16 @@
 Play Chess is an offline mobile game developed using Java and Android Studio, allowing two players to enjoy the classic game of chess.
 
 
+## Table of Contents
+*[Installation](#installation)
+
+*[Features](#features)
+
+*[Usage](#usage)
+
+*[Contributing](#contributing)
+
+
 ## Installation
 To install and run the Play Chess game on your Android device, follow these steps:
 
