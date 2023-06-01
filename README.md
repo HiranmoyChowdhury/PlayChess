@@ -33,6 +33,10 @@ To install and run the Play Chess game on your Android device, follow these step
 
   If we make a tap on the black queen, we can see where it can play.
   ![blackQueenCanMove](https://github.com/RanChyD/PlayChess/assets/49994927/6134491b-3849-475e-9eb8-6b08018ab449)
+  
+  Here the white bishop is attacking the black king. If we tap the Black Queen now, we will see the only legal action.
+
+  ![legalMoveForBlackQueen](https://github.com/RanChyD/PlayChess/assets/49994927/7b98d59c-5a5c-4575-8a87-7368df6ed162)
 
 **Check and Checkmate Detection:** The game calculates whether a move puts the opponent's king in check. It also checks for checkmate, ensuring that the game adheres to the rules of chess and provides a challenging experience.
 
