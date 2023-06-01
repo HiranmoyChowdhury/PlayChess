@@ -5,13 +5,13 @@ Play Chess is an offline mobile game developed using Java and Android Studio, al
 
 
 ## Table of Contents
-*[Installation](#installation)
+- [Installation](#installation)
 
-*[Features](#features)
+- [Features](#features)
 
-*[Usage](#usage)
+- [Usage](#usage)
 
-*[Contributing](#contributing)
+- [Contributing](#contributing)
 
 
 ## Installation
