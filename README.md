@@ -31,6 +31,9 @@ To install and run the Play Chess game on your Android device, follow these step
 
 **Comprehensive Move Options:** Every possible move in chess is implemented in the game. After selecting a chess piece to move, the game displays all legal moves available for that piece, enabling players to make strategic decisions.
 
+  If we make a tap on the black queen, we can see where it can play.
+  ![blackQueenCanMove](https://github.com/RanChyD/PlayChess/assets/49994927/6134491b-3849-475e-9eb8-6b08018ab449)
+
 **Check and Checkmate Detection:** The game calculates whether a move puts the opponent's king in check. It also checks for checkmate, ensuring that the game adheres to the rules of chess and provides a challenging experience.
 
 **Draw Detection:** Play Chess includes a draw detection mechanism to identify situations where a draw is inevitable due to stalemate or insufficient material.
