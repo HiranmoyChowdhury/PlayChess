@@ -71,3 +71,5 @@ Thank you for considering contributing to the Play Chess project! If you have an
 6.Push your changes to your forked repository.
 
 7.Submit a pull request, explaining the purpose and benefits of your changes.
+
+**White Walker is coming soon (Chess Bot)**
