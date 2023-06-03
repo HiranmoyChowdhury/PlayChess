@@ -27,7 +27,7 @@ To install and run the Play Chess game on your Android device, follow these step
 ## Features
 **Offline Gameplay:** Play Chess allows two players to compete against each other offline, making it convenient for players without an internet connection.
 
-**Object-Oriented Design:** The project follows an object-oriented design approach, utilizing interfaces, dynamic memory dispatch, and wrapper classes to enhance readability and maintainability for future updates.
+**Object-Oriented Design:** The project follows an object-oriented design approach, utilizing interfaces, dynamic method dispatch, and wrapper classes to enhance readability and maintainability for future updates.
 
 **Comprehensive Move Options:** Every possible move in chess is implemented in the game. After selecting a chess piece to move, the game displays all legal moves available for that piece, enabling players to make strategic decisions.
 
